@@ -51,7 +51,12 @@ class LTCanvasView: UIView {
     
     func edit(object: LTCanvasObject) {
         objects.forEach({
-            $0.isEditing = (object == $0)
+            if object == $0 {
+                objectInEditing = $0
+                $0.isEditing = true
+            } else {
+                $0.isEditing = false
+            }
         })
     }
 
