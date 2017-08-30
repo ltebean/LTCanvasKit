@@ -10,7 +10,7 @@ import UIKit
 
 class LTCanvasObject: NSObject {
 
-    let view = UILabel()
+    var view = UIView()
     
     var isAjustingPerspective = false
     
@@ -21,13 +21,12 @@ class LTCanvasObject: NSObject {
         }
     }
     
-    convenience init(frame: CGRect) {
+    convenience init(view: UIView, center: CGPoint) {
         self.init()
-        view.frame = frame
+        self.view = view
+        self.view.center = center
         setupGestures()
         view.layer.borderColor = UIColor.blue.cgColor
-        view.text = "haaha"
-        view.textAlignment = .center
         view.backgroundColor = UIColor.red
         isEditing = false
     }
