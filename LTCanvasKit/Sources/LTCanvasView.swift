@@ -48,6 +48,12 @@ class LTCanvasView: UIView {
         objects.remove(at: index)
         objects.insert(object, at: 0)
     }
+    
+    func edit(object: LTCanvasObject) {
+        objects.forEach({
+            $0.isEditing = (object == $0)
+        })
+    }
 
     
     func handleTap(_ gesture: UITapGestureRecognizer) {

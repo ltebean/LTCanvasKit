@@ -27,7 +27,6 @@ class LTCanvasObject: NSObject {
         self.view.center = center
         setupGestures()
         view.layer.borderColor = UIColor.blue.cgColor
-        view.backgroundColor = UIColor.red
         isEditing = false
     }
     

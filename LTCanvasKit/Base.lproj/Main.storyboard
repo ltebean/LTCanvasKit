@@ -22,38 +22,65 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dcl-oW-kZl" customClass="LTCanvasView" customModule="LTCanvasKit" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="547"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6XJ-hU-M3f">
-                                <rect key="frame" x="30" y="607" width="51" height="30"/>
+                                <rect key="frame" x="30" y="497" width="51" height="30"/>
                                 <state key="normal" title="to front"/>
                                 <connections>
                                     <action selector="toFront:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0rJ-DS-L9k"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5h-Va-YIT">
-                                <rect key="frame" x="294" y="607" width="51" height="30"/>
+                                <rect key="frame" x="294" y="497" width="51" height="30"/>
                                 <state key="normal" title="to back"/>
                                 <connections>
                                     <action selector="toBack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j5d-v7-dbi"/>
                                 </connections>
                             </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="phC-hJ-kmC">
+                                <rect key="frame" x="0.0" y="547" width="375" height="120"/>
+                                <color key="backgroundColor" red="0.87025207182320441" green="0.87025207182320441" blue="0.87025207182320441" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="ZIK-R7-99L"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="a11-lb-XKN">
+                                    <size key="itemSize" width="150" height="150"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="rme-A7-Fug">
+                                        <rect key="frame" x="0.0" y="-15" width="150" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dcl-oW-kZl" secondAttribute="bottom" id="3Xs-9S-q5U"/>
+                            <constraint firstItem="n5h-Va-YIT" firstAttribute="bottom" secondItem="6XJ-hU-M3f" secondAttribute="bottom" id="0vO-eq-ETF"/>
                             <constraint firstAttribute="trailing" secondItem="n5h-Va-YIT" secondAttribute="trailing" constant="30" id="4GM-jw-KVm"/>
                             <constraint firstItem="dcl-oW-kZl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="FbK-vj-kBt"/>
                             <constraint firstItem="dcl-oW-kZl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IIv-TF-ZKC"/>
+                            <constraint firstItem="phC-hJ-kmC" firstAttribute="top" secondItem="dcl-oW-kZl" secondAttribute="bottom" id="JJO-kU-hyQ"/>
                             <constraint firstAttribute="trailing" secondItem="dcl-oW-kZl" secondAttribute="trailing" id="Mj0-cR-5EY"/>
                             <constraint firstItem="6XJ-hU-M3f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="V2M-FO-UAm"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6XJ-hU-M3f" secondAttribute="bottom" constant="30" id="W0K-ZO-X4U"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="n5h-Va-YIT" secondAttribute="bottom" constant="30" id="dni-mZ-8Yd"/>
+                            <constraint firstItem="phC-hJ-kmC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="eZ3-yB-cpI"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="phC-hJ-kmC" secondAttribute="bottom" id="i3w-Vq-zb7"/>
+                            <constraint firstItem="6XJ-hU-M3f" firstAttribute="bottom" secondItem="dcl-oW-kZl" secondAttribute="bottom" constant="-20" id="ktV-wd-zc0"/>
+                            <constraint firstAttribute="trailing" secondItem="phC-hJ-kmC" secondAttribute="trailing" id="mXr-iV-dNw"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="canvasView" destination="dcl-oW-kZl" id="tGb-yj-1BP"/>
+                        <outlet property="collectionView" destination="phC-hJ-kmC" id="A68-pt-9kl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
